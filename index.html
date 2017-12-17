@@ -1,0 +1,23 @@
+<html>
+<script>
+function myFunction() {
+    var searchQuery=document.getElementById("searchQuery").value;
+    console.log("Searching for -"+searchQuery);
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("result").innerHTML = this.responseText;
+        }
+    };
+    var url="Add api gate way url to invoke lambda ?search="+searchQuery
+    xhttp.open("GET", , true);
+    xhttp.send();    
+}
+</script>
+<body><div align="center"><br><br><br><br>
+<h1>Hello World!</span></h1>
+<input type="text" id="searchQuery"></input>
+<button onclick="myFunction()">Search</button><br>
+<span id="result"></span>
+</body>
+</html>
